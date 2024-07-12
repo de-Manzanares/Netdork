@@ -8,7 +8,7 @@
 #include <sstream>
 
 double Net::m_recentAverageSmoothingFactor =
-    10.0; // Number of training samples to average over
+    1000.0; // Number of training samples to average over
 
 Net::Net(const std::vector<uint> &topology, const double eta = 0.0,
          const double alpha = 0.0)
@@ -37,7 +37,7 @@ Net::Net(const std::string &load_file, const double eta, const double alpha)
     : _error(), m_recentAverageError() {
   std::ifstream file(load_file);
   if (!file.is_open()) {
-    std::cout << "FILE NOT OPEN!" << std::endl;
+    throw std::runtime_error("file not found " + load_file);
   }
   std::string s;
   std::string val;
@@ -110,9 +110,9 @@ void Net::back_prop(const std::vector<double> &target) {
   _error = sqrt(_error); // RMS
 
   // Implement a recent average measurement
-  m_recentAverageError =
-      (m_recentAverageError * m_recentAverageSmoothingFactor + _error) /
-      (m_recentAverageSmoothingFactor + 1.0);
+  // m_recentAverageError =
+  //     (m_recentAverageError * m_recentAverageSmoothingFactor + _error) /
+  //     (m_recentAverageSmoothingFactor + 1.0);
 
   // Calculate output layer gradients
   for (uint n = 0; n < output_layer.size() - 1; ++n) {

@@ -17,7 +17,7 @@ class Net {
   void feed_forward(const std::vector<double> &input);
   void back_prop(const std::vector<double> &target);
   void get_result(std::vector<double> *result) const;
-  [[nodiscard]] const double &avg_error() const { return m_recentAverageError; }
+  // [[nodiscard]] const double &avg_error() const { return m_recentAverageError; }
   [[nodiscard]] const double &error() const { return _error; }
   void save(const std::string &save_file);
   void load(const std::string &load_file);
