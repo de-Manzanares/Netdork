@@ -16,8 +16,8 @@ std::vector<uint> random_index(const uint size) {
   return rand;
 }
 
-TEST_CASE("xorNet-test") {
-  Net xorNet(std::string{"../../data/xorNet.csv"}, 0, 0);
+TEST_CASE("xor-test") {
+  Net xorNet(std::string{"../../xor/config-xor.csv"}, 0, 0);
   const std::vector<std::vector<double>> input{{0, 0}, {0, 1}, {1, 0}, {1, 1}};
   const std::vector<double> target{-1, 1, 1, -1};
   std::vector<double> result;
