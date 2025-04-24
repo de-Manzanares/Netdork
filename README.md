@@ -1,20 +1,14 @@
-<div align='center'>
-
 ## Netdork 
 
-</div>
-
-This repository aims to be a collection of artificial neural net (ANN) tools and applications of said tools. 
-
-### Structure
+### Repo Structure
 
 #### Tools
 
-[ann_framework](ann_framework): The ANN library (if I can call it that). It's super teeny tiny for now.
+[ann_framework](ann_framework) - Artifical neural net framework.
 
 #### Applications
 
-[mnist](mnist): Training and testing of an MNIST Classifier
+[mnist](mnist) - Training and testing of an MNIST Classifier
 
-[xor](xor): A teeny tiny artifical neural network trained to behave as an XOR operator. Isn't that cute?
+[xor](xor) - A teeny tiny artifical neural network trained to behave as an XOR operator. Isn't that cute?
   
